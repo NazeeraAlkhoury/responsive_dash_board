@@ -6,9 +6,13 @@ import 'package:responsive_dash_board/core/utils/app_text_styles.dart';
 
 class CustomDrawerItem extends StatelessWidget {
   final DrawerItemModel drawerItemModel;
+  final bool isActive;
+  final void Function()? onTap;
   const CustomDrawerItem({
     super.key,
     required this.drawerItemModel,
+    required this.isActive,
+    this.onTap,
   });
 
   @override
@@ -19,12 +23,16 @@ class CustomDrawerItem extends StatelessWidget {
       ),
       title: Text(
         drawerItemModel.title,
-        style: AppTextStyles.styleBold16,
+        style:
+            isActive ? AppTextStyles.styleBold16 : AppTextStyles.styleRegular16,
       ),
-      trailing: Container(
-        color: AppColors.primaryColor,
-        width: 3.27,
-      ),
+      trailing: isActive
+          ? Container(
+              color: AppColors.primaryColor,
+              width: 3.27,
+            )
+          : null,
+      onTap: onTap,
     );
   }
 }
