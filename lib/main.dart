@@ -1,8 +1,14 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/views/dashboard_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Responsive Dash Board App',
       home: DashboardView(),
       debugShowCheckedModeBanner: false,
+      builder: DevicePreview.appBuilder,
     );
   }
 }
