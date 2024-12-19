@@ -15,7 +15,7 @@ class CustomContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         color: AppColors.containerBackgroundColor,
       ),
-      padding: const EdgeInsetsDirectional.all(20),
+      padding: const EdgeInsetsDirectional.all(12),
       child: child(context),
     );
   }

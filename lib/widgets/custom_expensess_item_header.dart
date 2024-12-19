@@ -14,22 +14,28 @@ class CustomExpensessItemHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: isActive
-              ? AppColors.greyBackgroundColor.withOpacity(.12)
-              : AppColors.greyBackgroundColor,
-          child: Center(
-            child: SvgPicture.asset(
-              image,
-              colorFilter: ColorFilter.mode(
-                  isActive ? Colors.white : AppColors.primaryColor,
-                  BlendMode.srcIn),
+        Flexible(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: CircleAvatar(
+              radius: 20,
+              backgroundColor: isActive
+                  ? AppColors.greyBackgroundColor.withOpacity(.12)
+                  : AppColors.greyBackgroundColor,
+              child: Center(
+                child: SvgPicture.asset(
+                  image,
+                  fit: BoxFit.scaleDown,
+                  colorFilter: ColorFilter.mode(
+                      isActive ? Colors.white : AppColors.primaryColor,
+                      BlendMode.srcIn),
+                ),
+              ),
             ),
           ),
         ),
+        const Spacer(),
         Transform.rotate(
           angle: -1.5708 * 2,
           child: Icon(

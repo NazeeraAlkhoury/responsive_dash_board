@@ -21,10 +21,15 @@ class CustomDrawerItem extends StatelessWidget {
       leading: SvgPicture.asset(
         drawerItemModel.image,
       ),
-      title: Text(
-        drawerItemModel.title,
-        style:
-            isActive ? AppTextStyles.styleBold16 : AppTextStyles.styleRegular16,
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: AlignmentDirectional.centerStart,
+        child: Text(
+          drawerItemModel.title,
+          style: isActive
+              ? AppTextStyles.styleBold16
+              : AppTextStyles.styleRegular16,
+        ),
       ),
       trailing: isActive
           ? Container(
