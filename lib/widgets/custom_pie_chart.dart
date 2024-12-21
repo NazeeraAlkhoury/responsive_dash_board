@@ -1,6 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/core/models/chart_section_model.dart';
+import 'package:responsive_dash_board/core/data/static/pie_details_data.dart';
 
 class CustomPieChart extends StatefulWidget {
   const CustomPieChart({
@@ -13,12 +13,7 @@ class CustomPieChart extends StatefulWidget {
 
 class _CustomPieChartState extends State<CustomPieChart> {
   int currentSectionIndex = -1;
-  List<ChartSectionModel> pieChartSectionData = const [
-    ChartSectionModel(color: Color(0xFF208CC8), value: 40),
-    ChartSectionModel(color: Color(0xFF4EB7F2), value: 25),
-    ChartSectionModel(color: Color(0xFF064061), value: 20),
-    ChartSectionModel(color: Color(0xFFE2DECD), value: 22),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
