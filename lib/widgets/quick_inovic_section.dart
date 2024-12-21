@@ -18,8 +18,14 @@ class QuickInoviceSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           QuickInvoiceHeader(),
+          SizedBox(
+            height: 16,
+          ),
           CustomQuicInoviceTitle(
             title: 'Latest Transaction',
+          ),
+          SizedBox(
+            height: 16,
           ),
           CustomLatestTransactionList(),
           Divider(

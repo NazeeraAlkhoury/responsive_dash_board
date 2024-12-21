@@ -16,6 +16,9 @@ class CustomForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomQuicInoviceTitle(title: title),
+        const SizedBox(
+          width: 16,
+        ),
         CustomTextFormField(
           hint: hint,
         ),

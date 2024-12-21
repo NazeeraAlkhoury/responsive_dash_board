@@ -20,7 +20,7 @@ class CustomAllExpensessItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: AppColors.borderColor),
@@ -36,7 +36,7 @@ class CustomAllExpensessItem extends StatelessWidget {
               isActive: isActive,
             ),
             const SizedBox(
-              height: 12,
+              height: 34,
             ),
             FittedBox(
               fit: BoxFit.scaleDown,
@@ -49,7 +49,7 @@ class CustomAllExpensessItem extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 3,
+              height: 8,
             ),
             FittedBox(
               fit: BoxFit.scaleDown,
@@ -62,7 +62,7 @@ class CustomAllExpensessItem extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 16,
             ),
             FittedBox(
               fit: BoxFit.scaleDown,

@@ -13,7 +13,7 @@ class ExpensessAndQuickInovic extends StatelessWidget {
       children: [
         CustomAllExpensessSection(),
         SizedBox(
-          height: 10,
+          height: 24,
         ),
         QuickInoviceSection(),
       ],

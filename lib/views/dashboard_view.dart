@@ -1,123 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_colors.dart';
-import 'package:responsive_dash_board/widgets/custom_all_expensess_section.dart';
-import 'package:responsive_dash_board/widgets/custom_container.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
-import 'package:responsive_dash_board/widgets/custom_latest_transaction_list.dart';
-import 'package:responsive_dash_board/widgets/custom_quick_info_title.dart';
-import 'package:responsive_dash_board/widgets/custom_text_form_field.dart';
-import 'package:responsive_dash_board/widgets/quick_inovice_header.dart';
+import 'package:responsive_dash_board/widgets/expensess_and_quick_inovic.dart';
+import 'package:responsive_dash_board/widgets/incom_section.dart';
+import 'package:responsive_dash_board/widgets/my_card_and_trans_history.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: CustomDrawer(),
           ),
-          const SizedBox(
-            width: 24,
+          SizedBox(
+            width: 32,
           ),
           Expanded(
-            flex: 2,
-            child: Column(
-              children: [
-                const CustomAllExpensessSection(),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomContainer(
-                  child: (BuildContext context) => const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      QuickInvoiceHeader(),
-                      CustomQuicInoviceTitle(
-                        title: 'Latest Transaction',
-                      ),
-                      CustomLatestTransactionList(),
-                      Divider(
-                        color: AppColors.borderColor,
-                        height: 42,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: CustomForm(
-                              title: 'Customer name',
-                              hint: 'Type customer name',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Expanded(
-                            child: CustomForm(
-                              title: 'Customer Email',
-                              hint: 'Type customer email',
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: CustomForm(
-                              title: 'Item name',
-                              hint: 'Type customer name',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Expanded(
-                            child: CustomForm(
-                              title: 'Item mount',
-                              hint: 'TUSD',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.only(top: 40),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: ExpensessAndQuickInovic(),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 24,
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      children: [
+                        MyCardAndTransHistory(),
+                        IncomSection(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          const SizedBox(
+          SizedBox(
             width: 24,
           ),
         ],
       ),
-    );
-  }
-}
-
-class CustomForm extends StatelessWidget {
-  final String title, hint;
-  const CustomForm({
-    super.key,
-    required this.title,
-    required this.hint,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomQuicInoviceTitle(title: title),
-        CustomTextFormField(
-          hint: hint,
-        ),
-      ],
     );
   }
 }

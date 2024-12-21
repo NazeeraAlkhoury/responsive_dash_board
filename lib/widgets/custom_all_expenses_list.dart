@@ -51,7 +51,7 @@ class _AllExpensesListState extends State<AllExpensesList> {
           ),
         ),
         const SizedBox(
-          width: 10,
+          width: 8,
         ),
         Expanded(
           child: CustomAllExpensessItem(
@@ -63,7 +63,7 @@ class _AllExpensesListState extends State<AllExpensesList> {
           ),
         ),
         const SizedBox(
-          width: 10,
+          width: 8,
         ),
         Expanded(
           child: CustomAllExpensessItem(

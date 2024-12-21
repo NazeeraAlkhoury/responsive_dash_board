@@ -17,7 +17,7 @@ class CustomAllExpensessSection extends StatelessWidget {
         children: [
           CustomAllExpensesHearder(),
           SizedBox(
-            height: 10,
+            height: 16,
           ),
           AllExpensesList(),
         ],

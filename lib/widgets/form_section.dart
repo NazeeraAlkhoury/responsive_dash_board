@@ -21,7 +21,7 @@ class FormSection extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 20,
+              width: 16,
             ),
             Expanded(
               child: CustomForm(
@@ -32,7 +32,7 @@ class FormSection extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 24,
         ),
         Row(
           children: [
@@ -43,7 +43,7 @@ class FormSection extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 20,
+              width: 16,
             ),
             Expanded(
               child: CustomForm(
@@ -53,13 +53,16 @@ class FormSection extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(
+          height: 24,
+        ),
         Row(
           children: [
             Expanded(
               child: CustomTextButton(),
             ),
             SizedBox(
-              width: 20,
+              width: 24,
             ),
             Expanded(
               child: CustomElevatedButton(),

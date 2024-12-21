@@ -3,9 +3,11 @@ import 'package:responsive_dash_board/core/utils/app_colors.dart';
 
 class CustomContainer extends StatelessWidget {
   final WidgetBuilder child;
+  final double? padding;
   const CustomContainer({
     super.key,
     required this.child,
+    this.padding,
   });
 
   @override
@@ -15,7 +17,7 @@ class CustomContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         color: AppColors.containerBackgroundColor,
       ),
-      padding: const EdgeInsetsDirectional.all(12),
+      padding: EdgeInsets.all(padding ?? 20),
       child: child(context),
     );
   }
