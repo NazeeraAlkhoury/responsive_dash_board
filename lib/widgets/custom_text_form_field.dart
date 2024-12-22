@@ -13,7 +13,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.greyBackgroundColor,
-        hintStyle: AppTextStyles.styleRegular16
+        hintStyle: AppTextStyles.styleRegular16(context)
             .copyWith(color: AppColors.subTitleTextColor),
         hintText: hint,
         border: getBorderStyle(),

@@ -20,9 +20,9 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        child: const Text(
+        child: Text(
           'Send Money',
-          style: AppTextStyles.styleSemiBold18,
+          style: AppTextStyles.styleSemiBold18(context),
         ),
       ),
     );

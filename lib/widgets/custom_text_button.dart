@@ -21,7 +21,7 @@ class CustomTextButton extends StatelessWidget {
         ),
         child: Text(
           'Add more details',
-          style: AppTextStyles.styleSemiBold18.copyWith(
+          style: AppTextStyles.styleSemiBold18(context).copyWith(
             color: AppColors.primaryColor,
           ),
         ),

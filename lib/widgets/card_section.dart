@@ -32,7 +32,7 @@ class _CardSectionState extends State<CardSection> {
       children: [
         Text(
           'My card',
-          style: AppTextStyles.styleMedium20
+          style: AppTextStyles.styleMedium20(context)
               .copyWith(color: AppColors.mainTextColor),
         ),
         const SizedBox(

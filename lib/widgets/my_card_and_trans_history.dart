@@ -25,7 +25,7 @@ class MyCardAndTransHistory extends StatelessWidget {
           const CustomTransactionHistoryHeader(),
           Text(
             '13 April 2022',
-            style: AppTextStyles.styleMedium16
+            style: AppTextStyles.styleMedium16(context)
                 .copyWith(color: AppColors.subTitleTextColor),
           ),
           const TransactionHistoryList(),

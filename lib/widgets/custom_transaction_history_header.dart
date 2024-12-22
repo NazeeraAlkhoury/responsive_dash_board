@@ -12,13 +12,13 @@ class CustomTransactionHistoryHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+        Text(
           'Transaction History',
-          style: AppTextStyles.styleSemiBold20,
+          style: AppTextStyles.styleSemiBold20(context),
         ),
         Text(
           'See all',
-          style: AppTextStyles.styleMedium16
+          style: AppTextStyles.styleMedium16(context)
               .copyWith(color: AppColors.primaryColor),
         ),
       ],

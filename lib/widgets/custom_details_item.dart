@@ -22,12 +22,12 @@ class CustomDetailsItem extends StatelessWidget {
         alignment: AlignmentDirectional.centerStart,
         child: Text(
           chartSectionModel.title,
-          style: AppTextStyles.styleRegular16,
+          style: AppTextStyles.styleRegular16(context),
         ),
       ),
       trailing: Text(
         chartSectionModel.value.toString(),
-        style: AppTextStyles.styleMedium16,
+        style: AppTextStyles.styleMedium16(context),
       ),
     );
   }

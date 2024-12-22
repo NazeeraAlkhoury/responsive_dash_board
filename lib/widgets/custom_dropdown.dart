@@ -20,9 +20,9 @@ class CustomDropDown extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Row(
           children: [
-            const Text(
+            Text(
               'Monthly',
-              style: AppTextStyles.styleMedium16,
+              style: AppTextStyles.styleMedium16(context),
             ),
             const SizedBox(
               width: 10,

@@ -27,8 +27,8 @@ class CustomDrawerItem extends StatelessWidget {
         child: Text(
           drawerItemModel.title,
           style: isActive
-              ? AppTextStyles.styleBold16
-              : AppTextStyles.styleRegular16,
+              ? AppTextStyles.styleBold16(context)
+              : AppTextStyles.styleRegular16(context),
         ),
       ),
       trailing: isActive

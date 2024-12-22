@@ -24,21 +24,31 @@ class DashboardView extends StatelessWidget {
             flex: 3,
             child: Padding(
               padding: EdgeInsets.only(top: 40),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: ExpensessAndQuickInovic(),
-                  ),
-                  SizedBox(
-                    width: 24,
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
+              child: CustomScrollView(
+                slivers: [
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Row(
                       children: [
-                        MyCardAndTransHistory(),
-                        IncomSection(),
+                        Expanded(
+                          flex: 3,
+                          child: ExpensessAndQuickInovic(),
+                        ),
+                        SizedBox(
+                          width: 24,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            children: [
+                              MyCardAndTransHistory(),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              IncomSection(),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

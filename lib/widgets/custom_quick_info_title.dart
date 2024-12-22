@@ -12,7 +12,7 @@ class CustomQuicInoviceTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.styleMedium16,
+      style: AppTextStyles.styleMedium16(context),
     );
   }
 }
