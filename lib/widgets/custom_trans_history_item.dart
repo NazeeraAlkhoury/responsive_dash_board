@@ -20,21 +20,33 @@ class CustomTransictionHistoryItem extends StatelessWidget {
       ),
       child: ListTile(
         contentPadding: const EdgeInsets.all(5),
-        title: Text(
-          transactionHistoryModel.title,
-          style: AppTextStyles.styleSemiBold16(context),
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryModel.title,
+            style: AppTextStyles.styleSemiBold16(context),
+          ),
         ),
-        subtitle: Text(
-          transactionHistoryModel.date,
-          style: AppTextStyles.styleRegular16(context)
-              .copyWith(color: AppColors.subTitleTextColor),
+        subtitle: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryModel.date,
+            style: AppTextStyles.styleRegular16(context)
+                .copyWith(color: AppColors.subTitleTextColor),
+          ),
         ),
-        trailing: Text(
-          transactionHistoryModel.amount,
-          style: AppTextStyles.styleSemiBold20(context).copyWith(
-              color: transactionHistoryModel.title == 'Cash Withdrawal'
-                  ? const Color(0xffF3735E)
-                  : const Color(0xff7DD97B)),
+        trailing: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryModel.amount,
+            style: AppTextStyles.styleSemiBold20(context).copyWith(
+                color: transactionHistoryModel.title == 'Cash Withdrawal'
+                    ? const Color(0xffF3735E)
+                    : const Color(0xff7DD97B)),
+          ),
         ),
       ),
     );

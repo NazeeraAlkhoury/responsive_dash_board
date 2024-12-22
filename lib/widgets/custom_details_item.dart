@@ -26,7 +26,7 @@ class CustomDetailsItem extends StatelessWidget {
         ),
       ),
       trailing: Text(
-        chartSectionModel.value.toString(),
+        '${chartSectionModel.value}%',
         style: AppTextStyles.styleMedium16(context),
       ),
     );

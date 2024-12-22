@@ -27,18 +27,28 @@ class MyCardChild extends StatelessWidget {
           trailing: SvgPicture.asset(AppImageAssets.gallery),
         ),
         const Spacer(),
-        Text(
-          '0918 8124 0042 8129',
-          style: AppTextStyles.styleSemiBold24(context)
-              .copyWith(color: AppColors.containerBackgroundColor),
+        Padding(
+          padding: const EdgeInsets.only(right: 48 - 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                '0918 8124 0042 8129',
+                style: AppTextStyles.styleSemiBold24(context)
+                    .copyWith(color: AppColors.containerBackgroundColor),
+              ),
+              Text(
+                '12/20 - 24',
+                style: AppTextStyles.styleRegular16(context)
+                    .copyWith(color: AppColors.containerBackgroundColor),
+              ),
+            ],
+          ),
         ),
-        const SizedBox(
-          height: 8,
-        ),
-        Text(
-          '12/20 - 24',
-          style: AppTextStyles.styleRegular16(context)
-              .copyWith(color: AppColors.containerBackgroundColor),
+        const Flexible(
+          child: SizedBox(
+            height: 54 - 28,
+          ),
         ),
       ],
     );

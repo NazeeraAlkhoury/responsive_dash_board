@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
 import 'package:responsive_dash_board/widgets/expensess_and_quick_inovic.dart';
-import 'package:responsive_dash_board/widgets/incom_section.dart';
-import 'package:responsive_dash_board/widgets/my_card_and_trans_history.dart';
+import 'package:responsive_dash_board/widgets/mycard_and_trans_hist_incom.dart';
 
 class DashBoardDesktopLayout extends StatelessWidget {
   const DashBoardDesktopLayout({
@@ -21,12 +20,12 @@ class DashBoardDesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 3,
-          child: Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: CustomScrollView(
-              slivers: [
-                SliverFillRemaining(
-                  hasScrollBody: false,
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 40),
                   child: Row(
                     children: [
                       Expanded(
@@ -37,25 +36,17 @@ class DashBoardDesktopLayout extends StatelessWidget {
                         width: 24,
                       ),
                       Expanded(
-                        child: Column(
-                          children: [
-                            MyCardAndTransHistory(),
-                            SizedBox(
-                              height: 24,
-                            ),
-                            IncomSection(),
-                          ],
-                        ),
+                        child: CardAndTransHistoryAndIncom(),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         SizedBox(
-          width: 24,
+          width: 20,
         ),
       ],
     );

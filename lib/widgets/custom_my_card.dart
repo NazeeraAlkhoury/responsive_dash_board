@@ -21,10 +21,7 @@ class CustomMyCard extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
-        child: const Padding(
-          padding: EdgeInsets.all(20),
-          child: MyCardChild(),
-        ),
+        child: const MyCardChild(),
       ),
     );
   }

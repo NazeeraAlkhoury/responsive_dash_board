@@ -27,6 +27,7 @@ class TransactionHistoryList extends StatelessWidget {
       ),
     ];
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: transactionHistoryList
           .map(
             (transactionHistoryModel) => Padding(

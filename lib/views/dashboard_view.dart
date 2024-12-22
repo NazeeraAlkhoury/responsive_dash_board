@@ -1,66 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_colors.dart';
+import 'package:responsive_dash_board/core/utils/app_size.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
-import 'package:responsive_dash_board/widgets/expensess_and_quick_inovic.dart';
-import 'package:responsive_dash_board/widgets/incom_section.dart';
-import 'package:responsive_dash_board/widgets/my_card_and_trans_history.dart';
+import 'package:responsive_dash_board/widgets/layout/adaptive_layout.dart';
+import 'package:responsive_dash_board/widgets/layout/dashboard_desktop_layout.dart';
+import 'package:responsive_dash_board/widgets/layout/dashboard_mobile_layout.dart';
+import 'package:responsive_dash_board/widgets/layout/dashboard_tablet_layout.dart';
 
-class DashboardView extends StatelessWidget {
+class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
 
   @override
+  State<DashboardView> createState() => _DashboardViewState();
+}
+
+class _DashboardViewState extends State<DashboardView> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      key: scaffoldKey,
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      body: Row(
-        children: [
-          Expanded(
-            child: CustomDrawer(),
-          ),
-          SizedBox(
-            width: 32,
-          ),
-          Expanded(
-            flex: 3,
-            child: Padding(
-              padding: EdgeInsets.only(top: 40),
-              child: CustomScrollView(
-                slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: ExpensessAndQuickInovic(),
-                        ),
-                        SizedBox(
-                          width: 24,
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            children: [
-                              MyCardAndTransHistory(),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              IncomSection(),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 24,
-          ),
-        ],
-      ),
+      appBar: MediaQuery.sizeOf(context).width < AppSizeConfig.tablet
+          ? AppBar(
+              elevation: 0,
+              backgroundColor: const Color(0xFFFAFAFA),
+              leading: IconButton(
+                  onPressed: () {
+                    scaffoldKey.currentState!.openDrawer();
+                  },
+                  icon: const Icon(Icons.menu)),
+            )
+          : null,
+      drawer: MediaQuery.sizeOf(context).width < AppSizeConfig.tablet
+          ? const CustomDrawer()
+          : null,
+      body: AdaptiveLayout(
+          mobileLayout: (context) => const DashboardMobileLayout(),
+          tabletLayout: (context) => const DashboardTabletLayout(),
+          desktopLayout: (context) => const DashBoardDesktopLayout()),
     );
   }
 }

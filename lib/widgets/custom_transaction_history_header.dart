@@ -16,6 +16,7 @@ class CustomTransactionHistoryHeader extends StatelessWidget {
           'Transaction History',
           style: AppTextStyles.styleSemiBold20(context),
         ),
+        const Spacer(),
         Text(
           'See all',
           style: AppTextStyles.styleMedium16(context)

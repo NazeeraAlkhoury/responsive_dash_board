@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_size.dart';
 import 'package:responsive_dash_board/widgets/custom_container.dart';
 import 'package:responsive_dash_board/widgets/custom_details.dart';
 import 'package:responsive_dash_board/widgets/custom_income_header.dart';
 import 'package:responsive_dash_board/widgets/custom_pie_chart.dart';
+import 'package:responsive_dash_board/widgets/details_pie_chart.dart';
 
 class IncomSection extends StatelessWidget {
   const IncomSection({
@@ -11,27 +13,34 @@ class IncomSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
     return CustomContainer(
-      child: (context) => const Column(
+      child: (context) => Column(
         children: [
-          CustomIncomeHeader(),
-          SizedBox(
+          const CustomIncomeHeader(),
+          const SizedBox(
             height: 24,
           ),
-          Row(
-            children: [
-              Expanded(
-                child: CustomPieChart(),
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                flex: 2,
-                child: CustomDetails(),
-              ),
-            ],
-          ),
+          width >= AppSizeConfig.desktop && width < 1750
+              ? const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: CustomDetailsPieChart(),
+                )
+              : const Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: CustomPieChart(),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      // flex: 2,
+                      child: CustomDetails(),
+                    ),
+                  ],
+                ),
         ],
       ),
     );
