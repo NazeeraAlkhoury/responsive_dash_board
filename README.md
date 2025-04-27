@@ -1,6 +1,10 @@
 # responsive_dash_board
 
-A new Flutter project.
+Developed a responsive and adaptive dashboard using Flutter, ensuring seamless user experience across diverse
+ devices.
+ 
+## Tools & Technologies:
+ Flutter, Dart, Responsive Design, Adaptive Layout Techniques , fl_chart
 
 ## Getting Started
 
